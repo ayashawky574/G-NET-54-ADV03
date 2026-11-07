@@ -1,4 +1,6 @@
-﻿using System.Drawing;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Drawing;
+using System.Globalization;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Exercises
@@ -52,6 +54,55 @@ namespace Exercises
             //{
             //    Console.WriteLine(item);
             //}
+            #endregion
+
+            #region Exercise 2: Leaderboard
+
+            //Add: 500 = "Ahmed", 200 = "Sara", 800 = "Ali", 350 = "Mona"
+           // SortedList<int, string> leaderBoard = new()
+           // {
+           //     [500] = "Ahmed",
+           //     [200] = "Sara",
+           //     [800] = "Ali",
+           //     [350] = "Mona"
+           // };
+           // //   -------------- OR-------------
+
+           // //Print all entries(they should be sorted by score automatically)
+           // foreach (var item in leaderBoard) 
+           // {
+           //     Console.WriteLine(item);
+           // }
+
+           // //Access the first key and first value
+           //int firstKey = leaderBoard.First().Key;
+           // int lastKey = leaderBoard.Last().Key;
+           // Console.WriteLine(firstKey);
+           // Console.WriteLine(lastKey);
+
+           // //Check if score 500 exists
+
+           // bool hasKey=  leaderBoard.ContainsKey(500);
+           // Console.WriteLine(hasKey);
+
+           // //Safely get the player with score 999
+           // bool playerWith900 = leaderBoard.TryGetValue(500, out string player);
+           // if (playerWith900)
+           // {
+           //     Console.WriteLine("player founded");
+           // }
+           // else
+           // {
+           //     Console.WriteLine("player not found");
+           // }
+
+           // //Remove the player with score 200 and print the updated list
+           // leaderBoard.Remove(200);
+           // Console.WriteLine("updated leader board :");
+           // foreach(var item in leaderBoard)
+           // {
+           //     Console.WriteLine($"[{item.Key}]={item.Value}");
+           // }
             #endregion
         }
     }
