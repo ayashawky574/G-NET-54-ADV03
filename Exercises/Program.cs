@@ -1,6 +1,8 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.VisualBasic;
+using System.ComponentModel.DataAnnotations;
 using System.Drawing;
 using System.Globalization;
+using System.Xml.Linq;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Exercises
@@ -59,50 +61,103 @@ namespace Exercises
             #region Exercise 2: Leaderboard
 
             //Add: 500 = "Ahmed", 200 = "Sara", 800 = "Ali", 350 = "Mona"
-           // SortedList<int, string> leaderBoard = new()
-           // {
-           //     [500] = "Ahmed",
-           //     [200] = "Sara",
-           //     [800] = "Ali",
-           //     [350] = "Mona"
-           // };
-           // //   -------------- OR-------------
+            // SortedList<int, string> leaderBoard = new()
+            // {
+            //     [500] = "Ahmed",
+            //     [200] = "Sara",
+            //     [800] = "Ali",
+            //     [350] = "Mona"
+            // };
+            // //   -------------- OR-------------
 
-           // //Print all entries(they should be sorted by score automatically)
-           // foreach (var item in leaderBoard) 
-           // {
-           //     Console.WriteLine(item);
-           // }
+            // //Print all entries(they should be sorted by score automatically)
+            // foreach (var item in leaderBoard) 
+            // {
+            //     Console.WriteLine(item);
+            // }
 
-           // //Access the first key and first value
-           //int firstKey = leaderBoard.First().Key;
-           // int lastKey = leaderBoard.Last().Key;
-           // Console.WriteLine(firstKey);
-           // Console.WriteLine(lastKey);
+            // //Access the first key and first value
+            //int firstKey = leaderBoard.First().Key;
+            // int lastKey = leaderBoard.Last().Key;
+            // Console.WriteLine(firstKey);
+            // Console.WriteLine(lastKey);
 
-           // //Check if score 500 exists
+            // //Check if score 500 exists
 
-           // bool hasKey=  leaderBoard.ContainsKey(500);
-           // Console.WriteLine(hasKey);
+            // bool hasKey=  leaderBoard.ContainsKey(500);
+            // Console.WriteLine(hasKey);
 
-           // //Safely get the player with score 999
-           // bool playerWith900 = leaderBoard.TryGetValue(500, out string player);
-           // if (playerWith900)
-           // {
-           //     Console.WriteLine("player founded");
-           // }
-           // else
-           // {
-           //     Console.WriteLine("player not found");
-           // }
+            // //Safely get the player with score 999
+            // bool playerWith900 = leaderBoard.TryGetValue(500, out string player);
+            // if (playerWith900)
+            // {
+            //     Console.WriteLine("player founded");
+            // }
+            // else
+            // {
+            //     Console.WriteLine("player not found");
+            // }
 
-           // //Remove the player with score 200 and print the updated list
-           // leaderBoard.Remove(200);
-           // Console.WriteLine("updated leader board :");
-           // foreach(var item in leaderBoard)
-           // {
-           //     Console.WriteLine($"[{item.Key}]={item.Value}");
-           // }
+            // //Remove the player with score 200 and print the updated list
+            // leaderBoard.Remove(200);
+            // Console.WriteLine("updated leader board :");
+            // foreach(var item in leaderBoard)
+            // {
+            //     Console.WriteLine($"[{item.Key}]={item.Value}");
+            // }
+            #endregion
+
+            #region Exercise 3: Phone Book
+            //Create a Collection with 4 contacts(name → phone number)
+            //Dictionary<string, int> phoneBook = new(4)
+            //{
+            //    ["aya" ]= 1234,
+            //    ["amera"] = 456,
+            //    ["omar"] = 6789
+            //};
+
+
+            ////Add a new contact using [] syntax (add or update)
+            //phoneBook["mohamed"] = 987;
+
+            ////Try adding a duplicate using .Add() — catch the exception and print the error
+            //try
+            //{
+            //    phoneBook.Add("aya", 1234);
+            //}
+            //catch 
+            //{
+            //    Console.WriteLine("this phone number is already exist");
+            //}
+
+            ////Try adding a duplicate using .TryAdd() — print whether it succeeded
+            //if(phoneBook.TryAdd("aya", 1234))
+            //{
+            //    Console.WriteLine("succeeded");
+            //}
+
+            ////Search for a contact that doesn’t exist
+            //bool isExist = phoneBook.ContainsKey("ppp");
+
+            //Console.WriteLine($"Exist : {isExist}");
+            ////Get a contact with a fallback of "Not Found"
+            //int value01 = phoneBook.GetValueOrDefault("ppppp", 0);
+            //if (value01!= 0)
+            //{
+            //    Console.WriteLine("Not found");
+            //}
+
+            ////Print all Keys on one line, then all Values on another line
+            //foreach (var key in phoneBook.Keys)
+            //{
+            //    Console.Write(key+" ");
+
+            //}
+            //Console.WriteLine();
+            //foreach (var vlaue in phoneBook.Values)
+            //{
+            //    Console.Write(vlaue+" ");
+            //}
             #endregion
         }
     }
